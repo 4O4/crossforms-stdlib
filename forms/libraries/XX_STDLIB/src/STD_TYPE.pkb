@@ -1,0 +1,44 @@
+CREATE OR REPLACE PACKAGE BODY STD_TYPE IS
+	
+  /*
+   * STDLIB for Oracle Forms 10g
+   * Copyright (c) 2017, Paweł Kierzkowski
+   * License: MIT
+   */
+  
+  ------------------------------------------------------------------------------
+  -- Public API
+  ------------------------------------------------------------------------------
+
+  PROCEDURE VALIDATE(
+    P_PROC_NAME IN VARCHAR2,
+    P_ARG_NAME IN VARCHAR2,
+    P_VALUE IN VARCHAR2,
+    P_ARG_TYPE IN ARG_FULL_ITEM_NAME
+  )
+  IS
+    L_FULL_ITEM_NAME STD_TYPE.FULL_ITEM_NAME;
+  BEGIN 
+    L_FULL_ITEM_NAME := P_VALUE;
+  EXCEPTION
+    WHEN VALUE_ERROR THEN
+      APP_EXCEPTION.INVALID_ARGUMENT(P_PROC_NAME, P_ARG_NAME, P_VALUE);
+  END VALIDATE;
+  
+  
+  PROCEDURE VALIDATE(
+    P_PROC_NAME IN VARCHAR2,
+    P_ARG_NAME IN VARCHAR2,
+    P_VALUE IN VARCHAR2,
+    P_ARG_TYPE IN ARG_BLOCK_NAME
+  )
+  IS
+    L_BLOCK_NAME STD_TYPE.BLOCK_NAME;
+  BEGIN 
+    L_BLOCK_NAME := P_VALUE;
+  EXCEPTION
+    WHEN VALUE_ERROR THEN
+      APP_EXCEPTION.INVALID_ARGUMENT(P_PROC_NAME, P_ARG_NAME, P_VALUE);
+  END VALIDATE;
+
+END STD_TYPE;

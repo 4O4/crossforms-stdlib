@@ -1,0 +1,37 @@
+CREATE OR REPLACE PACKAGE BODY STD_EVENT IS
+	
+  /*
+   * STDLIB for Oracle Forms 10g
+   * Copyright (c) 2017, Paweł Kierzkowski
+   * License: MIT
+   */
+	
+  ------------------------------------------------------------------------------
+  -- Public API
+  ------------------------------------------------------------------------------
+
+  FUNCTION NEW(P_EVENT_NAME IN VARCHAR2) RETURN STD_EVENT
+  IS
+    L_EVENT STD_EVENT;
+    LC_TRIGGER_ITEM CONSTANT STD_TYPE.FULL_ITEM_NAME := XFRM.NAME_IN('SYSTEM.TRIGGER_ITEM');
+    LC_TRIGGER_BLOCK CONSTANT STD_TYPE.BLOCK_NAME := XFRM.NAME_IN('SYSTEM.TRIGGER_BLOCK');
+  BEGIN
+    L_EVENT.NAME := P_EVENT_NAME;
+
+    IF LC_TRIGGER_ITEM IS NOT NULL THEN
+      L_EVENT.ITEM := STD_ITEM.NEW(LC_TRIGGER_ITEM);
+    END IF;
+
+    IF LC_TRIGGER_BLOCK IS NOT NULL THEN
+      L_EVENT.BLOCK := STD_BLOCK.NEW(LC_TRIGGER_BLOCK);
+    END IF;
+
+    IF P_EVENT_NAME = 'WHEN-TAB-PAGE-CHANGED' THEN
+      L_EVENT.TAB_PAGE.NEW := XFRM.NAME_IN('SYSTEM.TAB_NEW_PAGE');
+      L_EVENT.TAB_PAGE.PREVIOUS := XFRM.NAME_IN('SYSTEM.TAB_PREVIOUS_PAGE');
+    END IF;
+
+    RETURN L_EVENT;
+  END NEW;
+	
+END STD_EVENT;

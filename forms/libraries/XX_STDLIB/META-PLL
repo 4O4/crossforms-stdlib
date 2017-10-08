@@ -1,0 +1,23 @@
+.attach LIBRARY APPCORE END NOCONFIRM
+.attach LIBRARY FNDSQF END NOCONFIRM
+
+.include src/STD.pks
+.include src/STD.pkb
+
+.include src/STD_TYPE.pks
+.include src/STD_TYPE.pkb
+
+.include src/STD_EVENT.pks
+.include src/STD_EVENT.pkb
+
+.include src/STD_ITEM_PROPS_PRIVATE.pks
+
+.include src/STD_ITEM_PROPS.pks
+
+.include src/STD_ITEM.pks
+.include src/STD_ITEM.pkb
+
+.include src/STD_BLOCK.pks
+.include src/STD_BLOCK.pkb
+
+.output_dir dist

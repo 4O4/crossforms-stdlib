@@ -1,0 +1,103 @@
+CREATE OR REPLACE PACKAGE BODY STD_BLOCK IS
+	
+  /*
+   * STDLIB for Oracle Forms 10g
+   * Copyright (c) 2017, Paweł Kierzkowski
+   * License: MIT
+   */
+
+  ------------------------------------------------------------------------------
+  -- Private API declarations
+  ------------------------------------------------------------------------------
+
+  FUNCTION GET_PROPERTY(P_BLOCK IN STD_BLOCK, P_PROPERTY IN NUMBER) RETURN VARCHAR2;
+
+  PROCEDURE GET_VALID_BLOCK_HANDLE(
+    P_PROC_NAME IN VARCHAR2 DEFAULT 'STD_BLOCK.GET_VALID_BLOCK_HANDLE',
+    P_BLOCK_NAME IN STD_TYPE.BLOCK_NAME,
+    X_HANDLE OUT STD_TYPE.BLOCK_HANDLE
+  );
+  
+
+  ------------------------------------------------------------------------------
+  -- Public API
+  ------------------------------------------------------------------------------
+
+  FUNCTION NEW(P_BLOCK_NAME IN STD_TYPE.BLOCK_NAME) RETURN STD_BLOCK
+  IS
+    L_BLOCK STD_BLOCK;
+  BEGIN
+    STD_TYPE.VALIDATE('STD_BLOCK.NEW', 'P_BLOCK_NAME', P_BLOCK_NAME, STD_TYPE.ARG_TYPE.BLOCK_NAME);
+    
+    GET_VALID_BLOCK_HANDLE('STD_BLOCK.NEW', P_BLOCK_NAME, L_BLOCK.HANDLE);
+
+    L_BLOCK.NAME := P_BLOCK_NAME;
+
+    RETURN L_BLOCK;
+  END NEW;
+
+  
+  FUNCTION IS_NULL(P_BLOCK IN STD_BLOCK) RETURN BOOLEAN
+  IS
+  BEGIN
+    RETURN P_BLOCK.NAME = '_NULL_BLOCK_'
+      OR ID_NULL(P_BLOCK.HANDLE);
+  END IS_NULL;
+
+
+  FUNCTION EQUALS(P_BLOCK_1 IN STD_BLOCK, P_BLOCK_2 IN STD_BLOCK) RETURN BOOLEAN
+  IS
+  BEGIN
+    RETURN
+      -- NOT IS_NULL(P_BLOCK_1)
+      -- AND NOT IS_NULL(P_BLOCK_2)
+      -- AND 
+      P_BLOCK_1.NAME = P_BLOCK_2.NAME;
+  END EQUALS;
+
+
+  ------------------------------------------------------------------------------
+  -- Private API
+  ------------------------------------------------------------------------------
+
+  FUNCTION GET_PROPERTY(P_BLOCK IN STD_BLOCK, P_PROPERTY IN NUMBER) RETURN VARCHAR2
+  IS
+  BEGIN
+    RETURN GET_BLOCK_PROPERTY(P_BLOCK.HANDLE, P_PROPERTY);
+  END GET_PROPERTY;
+
+
+  PROCEDURE GET_VALID_BLOCK_HANDLE(
+    P_PROC_NAME IN VARCHAR2 DEFAULT 'STD_BLOCK.GET_VALID_BLOCK_HANDLE',
+    P_BLOCK_NAME IN STD_TYPE.BLOCK_NAME,
+    X_HANDLE OUT STD_TYPE.BLOCK_HANDLE
+  )
+  IS
+    L_HANDLE STD_TYPE.BLOCK_HANDLE;
+  BEGIN
+    L_HANDLE := FIND_BLOCK(P_BLOCK_NAME);
+    
+    IF ID_NULL(L_HANDLE) THEN
+      FND_MESSAGE.SET_STRING(P_PROC_NAME || ': Unable to find block ''' || P_BLOCK_NAME || '''');
+      APP_EXCEPTION.RAISE_EXCEPTION;
+    END IF;
+
+    X_HANDLE := L_HANDLE;
+  END GET_VALID_BLOCK_HANDLE;
+
+  
+--   FUNCTION BLOCK_NAME(P_BLOCK IN STD_BLOCK) RETURN VARCHAR2
+--   IS
+--   BEGIN
+--     RETURN GET_BLOCK_NAME(P_BLOCK);
+--   END BLOCK_NAME;
+
+
+--   FUNCTION GET_BLOCK_NAME(P_BLOCK IN STD_BLOCK) RETURN VARCHAR2
+--   IS
+--   BEGIN
+--     RETURN P_BLOCK.NAME;
+--   END GET_BLOCK_NAME;
+  
+
+END STD_BLOCK;
