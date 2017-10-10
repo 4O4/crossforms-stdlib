@@ -30,6 +30,10 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
 
   FUNCTION GET_VALUE(P_ITEM IN STD_ITEM) RETURN VARCHAR2;
 
+  PROCEDURE FOCUS(P_ITEM IN STD_ITEM);
+
+  PROCEDURE GO(P_ITEM IN STD_ITEM);
+
 
   -- /**
   --  * Returns the VARCHAR2 string TRUE if the Automatic Hint property is set to Yes, and the VARCHAR2 string FALSE if it is set to No.
@@ -437,21 +441,19 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
 
 
   /**
-   * Returns the VARCHAR2 string TRUE if the INSERT_ALLOWED property is set to true at the item level. Returns the string FALSE if the property is set to false.
+   * Returns the BOOLEAN TRUE if the INSERT_ALLOWED property is set to true at the item level. Returns the BOOLEAN FALSE if the property is set to false.
    */
-  -- FUNCTION INSERT_ALLOWED RETURN VARCHAR2;
-  -- FUNCTION GET_INSERT_ALLOWED RETURN VARCHAR2;
+  FUNCTION INSERT_ALLOWED(P_ITEM IN STD_ITEM) RETURN BOOLEAN;
+  FUNCTION GET_INSERT_ALLOWED(P_ITEM IN STD_ITEM) RETURN BOOLEAN;
   
-  -- PROCEDURE SET_INSERT_ALLOWED;
+  PROCEDURE SET_INSERT_ALLOWED(P_ITEM IN STD_ITEM, P_STATE BOOLEAN);
 
 
-  -- /**
-  --  * Returns the name of the canvas to which the item is assigned.
-  --  */
-  -- FUNCTION ITEM_CANVAS RETURN VARCHAR2;
-  -- FUNCTION GET_ITEM_CANVAS RETURN VARCHAR2;
-  
-  -- PROCEDURE SET_ITEM_CANVAS;
+  /**
+   * Returns the canvas to which the item is assigned.
+   */
+  FUNCTION CANVAS(P_ITEM IN STD_ITEM) RETURN STD_STRUCTURE.STD_CANVAS;
+  FUNCTION GET_CANVAS(P_ITEM IN STD_ITEM) RETURN STD_STRUCTURE.STD_CANVAS;
 
 
   /**
@@ -466,17 +468,15 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
   /**
    * Returns the name of the item.
    */
-  FUNCTION ITEM_NAME(P_ITEM IN STD_ITEM) RETURN VARCHAR2;
-  FUNCTION GET_ITEM_NAME(P_ITEM IN STD_ITEM) RETURN VARCHAR2;
+  FUNCTION NAME(P_ITEM IN STD_ITEM) RETURN VARCHAR2;
+  FUNCTION GET_NAME(P_ITEM IN STD_ITEM) RETURN VARCHAR2;
 
 
-  -- /**
-  --  * Returns the name of the tab page to which the item is assigned. Note that the item must be assigned to a tab canvas in order for Form Builder to return the name of the item’s tab page.
-  --  */
-  -- FUNCTION ITEM_TAB_PAGE RETURN VARCHAR2;
-  -- FUNCTION GET_ITEM_TAB_PAGE RETURN VARCHAR2;
-  
-  -- PROCEDURE SET_ITEM_TAB_PAGE;
+  /**
+   * Returns the name of the tab page to which the item is assigned. Note that the item must be assigned to a tab canvas in order for Form Builder to return the name of the item’s tab page.
+   */
+  FUNCTION TAB_PAGE(P_ITEM IN STD_ITEM) RETURN STD_STRUCTURE.STD_TAB_PAGE;
+  FUNCTION GET_TAB_PAGE(P_ITEM IN STD_ITEM) RETURN STD_STRUCTURE.STD_TAB_PAGE;
 
 
   -- /**
@@ -1065,12 +1065,12 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
 
 
   /**
-   * Returns the VARCHAR2 string TRUE if the UPDATE_ALLOWED property is set to true at the item level. Returns the string FALSE if the property is set to false.
+   * Returns the VARCHAR2 BOOLEAN TRUE if the UPDATE_ALLOWED property is set to true at the item level. Returns the BOOLEAN FALSE if the property is set to false.
    */
-  -- FUNCTION UPDATE_ALLOWED RETURN VARCHAR2;
-  -- FUNCTION GET_UPDATE_ALLOWED RETURN VARCHAR2;
+  FUNCTION UPDATE_ALLOWED(P_ITEM IN STD_ITEM) RETURN BOOLEAN;
+  FUNCTION GET_UPDATE_ALLOWED(P_ITEM IN STD_ITEM) RETURN BOOLEAN;
   
-  -- PROCEDURE SET_UPDATE_ALLOWED;
+  PROCEDURE SET_UPDATE_ALLOWED(P_ITEM IN STD_ITEM, P_STATE BOOLEAN);
 
 
   -- /**
