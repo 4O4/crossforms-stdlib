@@ -19,11 +19,13 @@
 .include src/STD_BLOCK_PROPS_PRIVATE.pks
 .include src/STD_CANVAS_PROPS_PRIVATE.pks
 .include src/STD_TAB_PAGE_PROPS_PRIVATE.pks
+.include src/STD_VIEWPORT_PROPS_PRIVATE.pks
 
 .include src/STD_ITEM_PROPS.pks
 .include src/STD_BLOCK_PROPS.pks
 .include src/STD_CANVAS_PROPS.pks
 .include src/STD_TAB_PAGE_PROPS.pks
+.include src/STD_VIEWPORT_PROPS.pks
 
 .include src/STD_ITEM.pks
 .include src/STD_ITEM.pkb

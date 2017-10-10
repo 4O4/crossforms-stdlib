@@ -1,0 +1,23 @@
+CREATE OR REPLACE PACKAGE STD_VIEWPORT_PROPS IS
+	
+  /*
+   * STDLIB for Oracle Forms 10g
+   * Copyright (c) 2017, Paweł Kierzkowski
+   * License: MIT
+   */
+	
+  ------------------------------------------------------------------------------
+  -- Public namespace for Built-in ViewPort Properties
+  ------------------------------------------------------------------------------
+
+  DIRECTION                      CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#DIRECTION;
+  HEIGHT                         CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#HEIGHT;
+  VIEWPORT_X_POS                 CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#VIEWPORT_X_POS;
+  VIEWPORT_Y_POS                 CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#VIEWPORT_Y_POS;
+  VIEWPORT_X_POS_ON_CANVAS       CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#VIEWPORT_X_POS_ON_CANVAS;
+  VIEWPORT_Y_POS_ON_CANVAS       CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#VIEWPORT_Y_POS_ON_CANVAS;
+  VISIBLE                        CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#VISIBLE;
+  WIDTH                          CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#WIDTH;
+  WINDOW_NAME                    CONSTANT NUMBER := STD_VIEWPORT_PROPS_PRIVATE.VP#WINDOW_NAME;
+
+END STD_VIEWPORT_PROPS;
