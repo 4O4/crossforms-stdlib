@@ -18,5 +18,7 @@ CREATE OR REPLACE PACKAGE STD_EVENT IS
   ------------------------------------------------------------------------------
 
   FUNCTION NEW(P_EVENT_NAME IN STD_TYPE.EVENT_NAME) RETURN STD_EVENT;
+  
+  FUNCTION IS_NULL(P_EVENT IN STD_EVENT) RETURN BOOLEAN;
 	
 END STD_EVENT;
