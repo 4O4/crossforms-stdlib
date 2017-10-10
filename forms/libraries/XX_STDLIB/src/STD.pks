@@ -19,6 +19,7 @@ CREATE OR REPLACE PACKAGE STD IS
   SUBTYPE FULL_ITEM_NAME IS STD_TYPE.FULL_ITEM_NAME;
   SUBTYPE MAX_VARCHAR2_DB IS STD_TYPE.MAX_VARCHAR2_DB;
   SUBTYPE MAX_VARCHAR2_PLSQL IS STD_TYPE.MAX_VARCHAR2_PLSQL;
+  SUBTYPE EVENT_NAME IS STD_TYPE.EVENT_NAME;
   
   
   -----------------------------------------------------------------
@@ -26,7 +27,6 @@ CREATE OR REPLACE PACKAGE STD IS
   -----------------------------------------------------------------
 
   SUBTYPE EVENT IS STD_EVENT.STD_EVENT;
-  SUBTYPE EVENT_NAME IS STD_EVENT.STD_EVENT_NAME;
   
   
   -----------------------------------------------------------------
@@ -41,6 +41,20 @@ CREATE OR REPLACE PACKAGE STD IS
   -----------------------------------------------------------------
 
   SUBTYPE BLOCK IS STD_BLOCK.STD_BLOCK;
+  
+  
+  -----------------------------------------------------------------
+  --- STD_CANVAS types aliases
+  -----------------------------------------------------------------
+
+  SUBTYPE CANVAS IS STD_CANVAS.STD_CANVAS;
+  
+  
+  -----------------------------------------------------------------
+  --- STD_TAB_PAGE types aliases
+  -----------------------------------------------------------------
+
+  SUBTYPE TAB_PAGE IS STD_TAB_PAGE.STD_TAB_PAGE;
 
 
   ------------------------------------------------------------------------------

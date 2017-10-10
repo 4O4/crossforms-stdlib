@@ -9,11 +9,8 @@ CREATE OR REPLACE PACKAGE STD_BLOCK IS
   ------------------------------------------------------------------------------
   -- Custom types
   ------------------------------------------------------------------------------
-  
-  TYPE STD_BLOCK IS RECORD (
-    NAME STD_TYPE.BLOCK_NAME DEFAULT '_NULL_BLOCK_',
-    HANDLE STD_TYPE.BLOCK_HANDLE
-  );
+
+  SUBTYPE STD_BLOCK IS STD_STRUCTURE.STD_BLOCK;
 
 	
   ------------------------------------------------------------------------------

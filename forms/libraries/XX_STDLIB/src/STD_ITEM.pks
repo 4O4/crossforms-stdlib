@@ -10,12 +10,7 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
   -- Custom types
   ------------------------------------------------------------------------------
 
-  TYPE STD_ITEM IS RECORD (
-    NAME STD_TYPE.ITEM_NAME DEFAULT '_NULL_ITEM_',
-    FULL_NAME STD_TYPE.FULL_ITEM_NAME DEFAULT '_NULL_BLOCK_._NULL_ITEM_',
-    BLOCK STD_BLOCK.STD_BLOCK,
-    HANDLE STD_TYPE.ITEM_HANDLE
-  );
+  SUBTYPE STD_ITEM IS STD_STRUCTURE.STD_ITEM;
 
   
   ------------------------------------------------------------------------------
