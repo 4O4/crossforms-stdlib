@@ -17,6 +17,6 @@ CREATE OR REPLACE PACKAGE STD_EVENT IS
   -- Public API
   ------------------------------------------------------------------------------
 
-  FUNCTION NEW(P_EVENT_NAME IN VARCHAR2) RETURN STD_EVENT;
+  FUNCTION NEW(P_EVENT_NAME IN STD_TYPE.EVENT_NAME) RETURN STD_EVENT;
 	
 END STD_EVENT;
