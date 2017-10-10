@@ -4,42 +4,42 @@
 .include src/STD.pks
 .include src/STD.pkb
 
-.include src/STD_STRUCTURE.pks
+.include src/_common_/STD_STRUCTURE.pks
 
-.include src/STD_TYPE.pks
-.include src/STD_TYPE.pkb
+.include src/_common_/STD_TYPE.pks
+.include src/_common_/STD_TYPE.pkb
 
-.include src/STD_EVENT.pks
-.include src/STD_EVENT.pkb
+.include src/event/STD_EVENT.pks
+.include src/event/STD_EVENT.pkb
 
-.include src/STD_GLOBAL_EVENT.pks
-.include src/STD_GLOBAL_EVENT.pkb
+.include src/event/STD_GLOBAL_EVENT.pks
+.include src/event/STD_GLOBAL_EVENT.pkb
 
-.include src/STD_ITEM_PROPS_PRIVATE.pks
-.include src/STD_BLOCK_PROPS_PRIVATE.pks
-.include src/STD_CANVAS_PROPS_PRIVATE.pks
-.include src/STD_TAB_PAGE_PROPS_PRIVATE.pks
-.include src/STD_VIEWPORT_PROPS_PRIVATE.pks
+.include src/item/STD_ITEM_PROPS_PRIVATE.pks
+.include src/block/STD_BLOCK_PROPS_PRIVATE.pks
+.include src/canvas/STD_CANVAS_PROPS_PRIVATE.pks
+.include src/tab_page/STD_TAB_PAGE_PROPS_PRIVATE.pks
+.include src/viewport/STD_VIEWPORT_PROPS_PRIVATE.pks
 
-.include src/STD_ITEM_PROPS.pks
-.include src/STD_BLOCK_PROPS.pks
-.include src/STD_CANVAS_PROPS.pks
-.include src/STD_TAB_PAGE_PROPS.pks
-.include src/STD_VIEWPORT_PROPS.pks
+.include src/item/STD_ITEM_PROPS.pks
+.include src/block/STD_BLOCK_PROPS.pks
+.include src/canvas/STD_CANVAS_PROPS.pks
+.include src/tab_page/STD_TAB_PAGE_PROPS.pks
+.include src/viewport/STD_VIEWPORT_PROPS.pks
 
-.include src/STD_ITEM.pks
-.include src/STD_ITEM.pkb
+.include src/item/STD_ITEM.pks
+.include src/item/STD_ITEM.pkb
 
-.include src/STD_BLOCK.pks
-.include src/STD_BLOCK.pkb
+.include src/block/STD_BLOCK.pks
+.include src/block/STD_BLOCK.pkb
 
-.include src/STD_CANVAS.pks
-.include src/STD_CANVAS.pkb
+.include src/canvas/STD_CANVAS.pks
+.include src/canvas/STD_CANVAS.pkb
 
-.include src/STD_TAB_PAGE.pks
-.include src/STD_TAB_PAGE.pkb
+.include src/tab_page/STD_TAB_PAGE.pks
+.include src/tab_page/STD_TAB_PAGE.pkb
 
-.include src/STD_VIEWPORT.pks
-.include src/STD_VIEWPORT.pkb
+.include src/viewport/STD_VIEWPORT.pks
+.include src/viewport/STD_VIEWPORT.pkb
 
 .output_dir dist
