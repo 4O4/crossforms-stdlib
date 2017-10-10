@@ -39,4 +39,7 @@
 .include src/STD_TAB_PAGE.pks
 .include src/STD_TAB_PAGE.pkb
 
+.include src/STD_VIEWPORT.pks
+.include src/STD_VIEWPORT.pkb
+
 .output_dir dist
