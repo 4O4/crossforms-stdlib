@@ -11,6 +11,7 @@ CREATE OR REPLACE PACKAGE STD_CANVAS_PROPS_PRIVATE IS
   ------------------------------------------------------------------------------
 
   CP#BACKGROUND_COLOR            CONSTANT NUMBER := XFRM.BACKGROUND_COLOR;
+  CP#CANVAS_SIZE                 CONSTANT NUMBER := XFRM.CANVAS_SIZE;
   CP#FILL_PATTERN                CONSTANT NUMBER := XFRM.FILL_PATTERN;
   CP#FONT_NAME                   CONSTANT NUMBER := XFRM.FONT_NAME;
   CP#FONT_SIZE                   CONSTANT NUMBER := XFRM.FONT_SIZE;
