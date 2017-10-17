@@ -7,7 +7,7 @@ CREATE OR REPLACE PACKAGE STD_STRUCTURE IS
    */
   
   ------------------------------------------------------------------------------
-  -- Dedicated amespace for STD data structures to avoid circular dependency 
+  -- Dedicated namespace for STD data structures to avoid circular dependency 
   -- hell in package specifications (eg. STD_CANVAS <=> STD_TAB_PAGE)
   ------------------------------------------------------------------------------
   
