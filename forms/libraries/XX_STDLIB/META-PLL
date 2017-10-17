@@ -1,9 +1,6 @@
 .attach LIBRARY APPCORE END NOCONFIRM
 .attach LIBRARY FNDSQF END NOCONFIRM
 
-.include src/STD.pks
-.include src/STD.pkb
-
 .include src/_common_/STD_STRUCTURE.pks
 
 .include src/_common_/STD_TYPE.pks
@@ -20,12 +17,14 @@
 .include src/canvas/STD_CANVAS_PROPS_PRIVATE.pks
 .include src/tab_page/STD_TAB_PAGE_PROPS_PRIVATE.pks
 .include src/viewport/STD_VIEWPORT_PROPS_PRIVATE.pks
+.include src/window/STD_WINDOW_PROPS_PRIVATE.pks
 
 .include src/item/STD_ITEM_PROPS.pks
 .include src/block/STD_BLOCK_PROPS.pks
 .include src/canvas/STD_CANVAS_PROPS.pks
 .include src/tab_page/STD_TAB_PAGE_PROPS.pks
 .include src/viewport/STD_VIEWPORT_PROPS.pks
+.include src/window/STD_WINDOW_PROPS.pks
 
 .include src/item/STD_ITEM.pks
 .include src/item/STD_ITEM.pkb
@@ -41,5 +40,11 @@
 
 .include src/viewport/STD_VIEWPORT.pks
 .include src/viewport/STD_VIEWPORT.pkb
+
+.include src/window/STD_WINDOW.pks
+.include src/window/STD_WINDOW.pkb
+
+.include src/STD.pks
+.include src/STD.pkb
 
 .output_dir dist
