@@ -18,6 +18,7 @@
 .include src/tab_page/STD_TAB_PAGE_PROPS_PRIVATE.pks
 .include src/viewport/STD_VIEWPORT_PROPS_PRIVATE.pks
 .include src/window/STD_WINDOW_PROPS_PRIVATE.pks
+.include src/application/STD_APPLICATION_PROPS_PRIVATE.pks
 
 .include src/item/STD_ITEM_PROPS.pks
 .include src/block/STD_BLOCK_PROPS.pks
@@ -25,6 +26,7 @@
 .include src/tab_page/STD_TAB_PAGE_PROPS.pks
 .include src/viewport/STD_VIEWPORT_PROPS.pks
 .include src/window/STD_WINDOW_PROPS.pks
+.include src/application/STD_APPLICATION_PROPS.pks
 
 .include src/item/STD_ITEM.pks
 .include src/item/STD_ITEM.pkb
@@ -43,6 +45,9 @@
 
 .include src/window/STD_WINDOW.pks
 .include src/window/STD_WINDOW.pkb
+
+.include src/application/STD_APPLICATION.pks
+.include src/application/STD_APPLICATION.pkb
 
 .include src/STD.pks
 .include src/STD.pkb
