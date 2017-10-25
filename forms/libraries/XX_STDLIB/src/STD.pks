@@ -85,5 +85,20 @@ CREATE OR REPLACE PACKAGE STD IS
   ------------------------------------------------------------------------------
 
   ARG_TYPE CONSTANT STD_TYPE.ARGUMENT_TYPES := STD_TYPE.ARG_TYPE;
+
+
+  ------------------------------------------------------------------------------
+  -- STD_STRUCTURE constants' aliases
+  ------------------------------------------------------------------------------
+
+  RECORD_STATUS CONSTANT STD_STRUCTURE.OBJECT_STATUSES := STD_STRUCTURE.RECORD_STATUS;
+  BLOCK_STATUS CONSTANT STD_STRUCTURE.OBJECT_STATUSES := STD_STRUCTURE.BLOCK_STATUS;
+
+
+  ------------------------------------------------------------------------------
+  -- Global STD objects
+  ------------------------------------------------------------------------------
+
+  FORMS_MDI_WINDOW CONSTANT STD_WINDOW.STD_WINDOW := STD_WINDOW.NEW_FORMS_MDI_WINDOW();
   
 END STD;
