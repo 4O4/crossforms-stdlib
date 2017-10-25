@@ -185,6 +185,45 @@ CREATE OR REPLACE PACKAGE STD_STRUCTURE IS
     PREVIOUS STD_TAB_PAGE
   );
 
+
+  ------------------------------------------------------------------------------
+  -- Built-in record property enums
+  ------------------------------------------------------------------------------
+  
+  TYPE OBJECT_STATUSES IS RECORD (
+    /*
+     * Specifies that the record is to be treated as a NEW record, that is, 
+     * a record that has not been marked for insert, update, or query. Changed 
+     * but uncleared or uncommitted records cannot be assigned a status of NEW.
+     */
+    NEW NUMBER := STD_RECORD_PROPS.NEW_STATUS,
+    
+    /*
+     * Specifies that the record is to be marked as an INSERT and should be 
+     * inserted into the appropriate table when the next commit action occurs.
+     */
+    NEW_DIRTY  NUMBER := STD_RECORD_PROPS.INSERT_STATUS,
+
+    /*
+     * Specifies that the record is to be treated as a QUERY record, whether 
+     * it actually is.
+     */
+    QUERY NUMBER := STD_RECORD_PROPS.QUERY_STATUS,
+
+    /*
+     * Specifies that the record should be marked for update and should be 
+     * treated as an update when the next commit action occurs.
+     */
+    QUERY_DIRTY NUMBER := STD_RECORD_PROPS.CHANGED_STATUS
+  );
+
+
+  PRIV#RECORD_STATUS_ OBJECT_STATUSES;
+  PRIV#BLOCK_STATUS OBJECT_STATUSES;
+
+  RECORD_STATUS CONSTANT OBJECT_STATUSES := PRIV#RECORD_STATUS_;
+  BLOCK_STATUS CONSTANT OBJECT_STATUSES := PRIV#BLOCK_STATUS;
+
   
   ------------------------------------------------------------------------------
   -- Public API
