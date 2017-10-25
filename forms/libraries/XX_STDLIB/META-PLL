@@ -6,6 +6,9 @@
 .include src/_common_/STD_TYPE.pks
 .include src/_common_/STD_TYPE.pkb
 
+.include src/_common_/STD_CONVERT.pks
+.include src/_common_/STD_CONVERT.pkb
+
 .include src/event/STD_EVENT.pks
 .include src/event/STD_EVENT.pkb
 
@@ -13,23 +16,32 @@
 .include src/event/STD_GLOBAL_EVENT.pkb
 
 .include src/item/STD_ITEM_PROPS_PRIVATE.pks
+.include src/item/STD_ITEM_INSTANCE_PROPS_PRIV.pks
 .include src/block/STD_BLOCK_PROPS_PRIVATE.pks
 .include src/canvas/STD_CANVAS_PROPS_PRIVATE.pks
 .include src/tab_page/STD_TAB_PAGE_PROPS_PRIVATE.pks
 .include src/viewport/STD_VIEWPORT_PROPS_PRIVATE.pks
+.include src/visual_attribute/STD_VATTR_PROPS_PRIVATE.pks
+.include src/record/STD_RECORD_PROPS_PRIVATE.pks
 .include src/window/STD_WINDOW_PROPS_PRIVATE.pks
 .include src/application/STD_APPLICATION_PROPS_PRIVATE.pks
 
 .include src/item/STD_ITEM_PROPS.pks
+.include src/item/STD_ITEM_INSTANCE_PROPS.pks
 .include src/block/STD_BLOCK_PROPS.pks
 .include src/canvas/STD_CANVAS_PROPS.pks
 .include src/tab_page/STD_TAB_PAGE_PROPS.pks
 .include src/viewport/STD_VIEWPORT_PROPS.pks
+.include src/visual_attribute/STD_VATTR_PROPS.pks
+.include src/record/STD_RECORD_PROPS.pks
 .include src/window/STD_WINDOW_PROPS.pks
 .include src/application/STD_APPLICATION_PROPS.pks
 
 .include src/item/STD_ITEM.pks
 .include src/item/STD_ITEM.pkb
+
+.include src/block/STD_BLOCK_PRIVATE.pks
+.include src/block/STD_BLOCK_PRIVATE.pkb
 
 .include src/block/STD_BLOCK.pks
 .include src/block/STD_BLOCK.pkb
@@ -42,6 +54,9 @@
 
 .include src/viewport/STD_VIEWPORT.pks
 .include src/viewport/STD_VIEWPORT.pkb
+
+.include src/visual_attribute/STD_VATTR.pks
+.include src/visual_attribute/STD_VATTR.pkb
 
 .include src/window/STD_WINDOW.pks
 .include src/window/STD_WINDOW.pkb
