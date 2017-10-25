@@ -16,6 +16,8 @@ CREATE OR REPLACE PACKAGE STD IS
   SUBTYPE WINDOW_NAME IS STD_TYPE.WINDOW_NAME;
   SUBTYPE CANVAS_NAME IS STD_TYPE.CANVAS_NAME;
   SUBTYPE TAB_PAGE_NAME IS STD_TYPE.TAB_PAGE_NAME;  
+  SUBTYPE VIEWPORT_NAME IS STD_TYPE.VIEWPORT_NAME;  
+  SUBTYPE VATTR_NAME IS STD_TYPE.VATTR_NAME;  
   SUBTYPE FULL_ITEM_NAME IS STD_TYPE.FULL_ITEM_NAME;
   SUBTYPE MAX_VARCHAR2_DB IS STD_TYPE.MAX_VARCHAR2_DB;
   SUBTYPE MAX_VARCHAR2_PLSQL IS STD_TYPE.MAX_VARCHAR2_PLSQL;
@@ -62,6 +64,13 @@ CREATE OR REPLACE PACKAGE STD IS
   -----------------------------------------------------------------
 
   SUBTYPE VIEWPORT IS STD_VIEWPORT.STD_VIEWPORT;
+  
+  
+  -----------------------------------------------------------------
+  --- STD_VATTR types aliases
+  -----------------------------------------------------------------
+
+  SUBTYPE VATTR IS STD_VATTR.STD_VATTR;
   
   
   -----------------------------------------------------------------
