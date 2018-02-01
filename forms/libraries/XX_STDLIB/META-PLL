@@ -3,6 +3,7 @@
 
 .include src/_common_/STD_STRUCTURE.pks
 
+.include src/_common_/STD_CONSTRAINTS.pks
 .include src/_common_/STD_TYPE.pks
 .include src/_common_/STD_TYPE.pkb
 
@@ -23,19 +24,25 @@
 .include src/viewport/STD_VIEWPORT_PROPS_PRIVATE.pks
 .include src/visual_attribute/STD_VATTR_PROPS_PRIVATE.pks
 .include src/record/STD_RECORD_PROPS_PRIVATE.pks
+.include src/record_group/STD_RECORD_GROUP_PROPS_PRIVATE.pks
 .include src/window/STD_WINDOW_PROPS_PRIVATE.pks
 .include src/application/STD_APPLICATION_PROPS_PRIVATE.pks
 
 .include src/item/STD_ITEM_PROPS.pks
 .include src/item/STD_ITEM_INSTANCE_PROPS.pks
+.include src/item/STD_ITEM_CUSTOM_PROPS.pks
 .include src/block/STD_BLOCK_PROPS.pks
 .include src/canvas/STD_CANVAS_PROPS.pks
 .include src/tab_page/STD_TAB_PAGE_PROPS.pks
 .include src/viewport/STD_VIEWPORT_PROPS.pks
 .include src/visual_attribute/STD_VATTR_PROPS.pks
 .include src/record/STD_RECORD_PROPS.pks
+.include src/record_group/STD_RECORD_GROUP_PROPS.pks
 .include src/window/STD_WINDOW_PROPS.pks
 .include src/application/STD_APPLICATION_PROPS.pks
+
+.include src/item/STD_ITEM_PRIVATE.pks
+.include src/item/STD_ITEM_PRIVATE.pkb
 
 .include src/item/STD_ITEM.pks
 .include src/item/STD_ITEM.pkb
@@ -48,6 +55,9 @@
 
 .include src/canvas/STD_CANVAS.pks
 .include src/canvas/STD_CANVAS.pkb
+
+.include src/property/STD_PROPERTY.pks
+.include src/property/STD_PROPERTY.pkb
 
 .include src/tab_page/STD_TAB_PAGE.pks
 .include src/tab_page/STD_TAB_PAGE.pkb
