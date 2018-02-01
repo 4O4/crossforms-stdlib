@@ -15,6 +15,8 @@ CREATE OR REPLACE PACKAGE STD IS
   SUBTYPE BLOCK_NAME IS STD_TYPE.BLOCK_NAME;
   SUBTYPE WINDOW_NAME IS STD_TYPE.WINDOW_NAME;
   SUBTYPE CANVAS_NAME IS STD_TYPE.CANVAS_NAME;
+  SUBTYPE PROPERTY_NAME IS STD_TYPE.PROPERTY_NAME;
+  SUBTYPE PROPERTY_VALUE IS STD_TYPE.PROPERTY_VALUE;
   SUBTYPE TAB_PAGE_NAME IS STD_TYPE.TAB_PAGE_NAME;  
   SUBTYPE VIEWPORT_NAME IS STD_TYPE.VIEWPORT_NAME;  
   SUBTYPE VATTR_NAME IS STD_TYPE.VATTR_NAME;  
@@ -50,6 +52,13 @@ CREATE OR REPLACE PACKAGE STD IS
   -----------------------------------------------------------------
 
   SUBTYPE CANVAS IS STD_CANVAS.STD_CANVAS;
+  
+  
+  -----------------------------------------------------------------
+  --- STD_PROPERTY types aliases
+  -----------------------------------------------------------------
+
+  SUBTYPE PROPERTY IS STD_PROPERTY.STD_PROPERTY;
   
   
   -----------------------------------------------------------------
