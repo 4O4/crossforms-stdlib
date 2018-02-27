@@ -155,7 +155,7 @@ CREATE OR REPLACE PACKAGE STD_STRUCTURE IS
     /**
      * Event-specific information describing tab pages transition (WHEN-TAB-PAGE-CHANGED)
      */
-    TAB_PAGE STD_EVENT_TAB_PAGE_INFO
+    TAB_PAGE STD_EVENT_TAB_PAGE_INFO,
 
     /**
      * Event-specific. Represents the name of the last window that was
@@ -167,7 +167,7 @@ CREATE OR REPLACE PACKAGE STD_STRUCTURE IS
      * - WHEN-WINDOW-DEACTIVATED
      * - WHEN-WINDOW-RESIZED
      */
-    -- WINDOW STD_TYPE.OBJECT_NAME
+    WINDOW STD_WINDOW
 
     /**
      * Represents the status of the current form. The value can be one of three form properties:
