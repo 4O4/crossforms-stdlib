@@ -415,10 +415,10 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
   /**
    * Returns the height of the item. The size of the units depends on the Coordinate System and default font scaling you specified for the form.
    */
-  -- FUNCTION HEIGHT RETURN VARCHAR2;
-  -- FUNCTION GET_HEIGHT RETURN VARCHAR2;
-  
-  -- PROCEDURE SET_HEIGHT;
+  FUNCTION HEIGHT(P_ITEM IN STD_ITEM) RETURN NUMBER;
+  FUNCTION GET_HEIGHT(P_ITEM IN STD_ITEM) RETURN NUMBER;
+
+  PROCEDURE SET_HEIGHT(P_ITEM IN STD_ITEM, P_HEIGHT IN NUMBER);
 
 
   -- /**
@@ -1184,10 +1184,10 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
   /**
    * Returns the width of the item.
    */
-  -- FUNCTION WIDTH RETURN VARCHAR2;
-  -- FUNCTION GET_WIDTH RETURN VARCHAR2;
+  FUNCTION WIDTH(P_ITEM IN STD_ITEM) RETURN NUMBER;
+  FUNCTION GET_WIDTH(P_ITEM IN STD_ITEM) RETURN NUMBER;
   
-  -- PROCEDURE SET_WIDTH;
+  PROCEDURE SET_WIDTH(P_ITEM IN STD_ITEM, P_WIDTH IN NUMBER);
 
 
   -- /**
@@ -1211,19 +1211,19 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
   /**
    * Returns the x coordinate that reflects the current placement of the item’s upper left corner relative to the upper left corner of the canvas.
    */
-  -- FUNCTION X_POS RETURN VARCHAR2;
-  -- FUNCTION GET_X_POS RETURN VARCHAR2;
+  FUNCTION X_POS(P_ITEM IN STD_ITEM) RETURN NUMBER;
+  FUNCTION GET_X_POS(P_ITEM IN STD_ITEM) RETURN NUMBER;
   
-  -- PROCEDURE SET_X_POS;
+  PROCEDURE SET_X_POS(P_ITEM IN STD_ITEM, P_X_POS IN NUMBER);
 
 
   /**
    * Returns the y coordinate that reflects the current placement of the item’s upper left corner relative to the upper left corner of the canvas.
    */
-  -- FUNCTION Y_POS RETURN VARCHAR2;
-  -- FUNCTION GET_Y_POS RETURN VARCHAR2;
+  FUNCTION Y_POS(P_ITEM IN STD_ITEM) RETURN NUMBER;
+  FUNCTION GET_Y_POS(P_ITEM IN STD_ITEM) RETURN NUMBER;
   
-  -- PROCEDURE SET_Y_POS;
+  PROCEDURE SET_Y_POS(P_ITEM IN STD_ITEM, P_Y_POS IN NUMBER);
 
   /**
    * Sets the value of a user-defined property in a Java pluggable component
