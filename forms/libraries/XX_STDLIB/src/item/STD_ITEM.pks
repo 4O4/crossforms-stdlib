@@ -570,13 +570,13 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
   -- PROCEDURE SET_LOCK_RECORD_ON_CHANGE;
 
 
-  -- /**
-  --  * Returns the VARCHAR2 name of the LOV associated with the given item. If the LOV name does not exist, you will get an error message.
-  --  */
-  -- FUNCTION LOV_NAME RETURN VARCHAR2;
-  -- FUNCTION GET_LOV_NAME RETURN VARCHAR2;
+  /**
+   * Returns the VARCHAR2 name of the LOV associated with the given item. If the LOV name does not exist, you will get an error message.
+   */
+  FUNCTION LOV_NAME(P_ITEM IN STD_ITEM) RETURN VARCHAR2;
+  FUNCTION GET_LOV_NAME(P_ITEM IN STD_ITEM) RETURN VARCHAR2;
   
-  -- PROCEDURE SET_LOV_NAME;
+  PROCEDURE SET_LOV_NAME(P_ITEM IN STD_ITEM, P_LOV_NAME IN VARCHAR2);
 
 
   -- /**
@@ -1144,13 +1144,13 @@ CREATE OR REPLACE PACKAGE STD_ITEM IS
   -- PROCEDURE SET_UPDATE_PERMISSION;
 
 
-  -- /**
-  --  * Returns the VARCHAR2 string TRUE if Form Builder should validate the value of the text item against the values in the attached LOV; otherwise returns the VARCHAR2 string FALSE.
-  --  */
-  -- FUNCTION VALIDATE_FROM_LIST RETURN VARCHAR2;
-  -- FUNCTION GET_VALIDATE_FROM_LIST RETURN VARCHAR2;
+  /**
+   * Returns the BOOLEAN TRUE if Form Builder should validate the value of the text item against the values in the attached LOV; otherwise returns the BOOLEAN FALSE.
+   */
+  FUNCTION VALIDATE_FROM_LIST(P_ITEM IN STD_ITEM) RETURN BOOLEAN;
+  FUNCTION GET_VALIDATE_FROM_LIST(P_ITEM IN STD_ITEM) RETURN BOOLEAN;
   
-  -- PROCEDURE SET_VALIDATE_FROM_LIST;
+  PROCEDURE SET_VALIDATE_FROM_LIST(P_ITEM IN STD_ITEM, P_STATE IN BOOLEAN);
 
 
   /**
