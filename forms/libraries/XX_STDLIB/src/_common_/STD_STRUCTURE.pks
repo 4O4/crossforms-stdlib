@@ -101,7 +101,9 @@ CREATE OR REPLACE PACKAGE STD_STRUCTURE IS
     /**
      * Represents the name of the form that Form Builder is executing
      */
-    -- CURRENT_FORM OBJECT_NAME,
+    FORM_NAME STD_TYPE.FORM_NAME,
+
+    RECORD_NUMBER NUMBER,
 
     /**
      * Note: CURRENT_ITEM is included for compatibility with previous versions. Oracle
