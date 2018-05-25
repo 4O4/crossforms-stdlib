@@ -20,20 +20,9 @@ Also, the extra data structures provided by STDLIB can help make the code cleane
 
 Use [CrossForms](https://github.com/4O4/crossforms) to build PLL library from sources. Dist output path is `forms/libraries/XX_STDLIB/dist`.
 
-## Installation
+## Installation and usage
 
-1. Build `XX_STDLIB.pll` library from sources or get the prebuilt one from `forms/libraries/XX_STDLIB/dist` folder
-2. Upload the whole project folder to EBS Application Server
-3. Launch `./install.sh` and answer **Y** when prompted 
-
-## Local dev environment setup
-
-In case you want to use local installation of DevSuite to compile some library which depends on STDLIB, do one of the following:
-
-- adjust `FORMS_PATH` to point to the `crossforms-stdlib/forms/libraries/XX_STDLIB/dist` folder
-- copy `XX_STDLIB.pll` to one of the folders listed in `FORMS_PATH` and keep it up to date
-
-`FORMS_PATH` is either an environment variable on Linux or registry key on Windows.
+Check out [the project's wiki](../../wiki/Getting-started).
 
 ## Project status
 
