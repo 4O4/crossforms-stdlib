@@ -22,7 +22,7 @@ Use [CrossForms](https://github.com/4O4/crossforms) to build PLL library from so
 
 ## Installation and usage
 
-Check out [the project's wiki](../../wiki/).
+Check out [the docs](https://4o4.github.io/crossforms-stdlib/faq/index.html).
 
 ## Project status
 
