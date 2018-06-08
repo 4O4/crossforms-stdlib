@@ -2,8 +2,23 @@
     "docs": [
         {
             "location": "/index.html",
-            "text": "Navigate through the wiki pages using sidebar on the right.",
+            "text": "What is this?\n\u00b6\n\n\nSTDLIB is a PL/SQL library for Oracle Forms 10g engine used by Oracle E-Business Suite R12. \n\n\nIt aims to provide a more standardized, consistent, properly namespaced and more type-safe APIs with some minimal abstraction layers as an alternative to the somewhat chaotic Oracle Forms built-in procedures and functions. \n\n\nIt is designed from the ground up to assist as much as possible in \nCrossForms\n-based projects development.\n\n\nWhy to use it?\n\u00b6\n\n\nMainly because it helps to detect most common errors during compilation or early at the Form startup, instead of at the specific program unit runtime. We\u2019re talking especially about typos in string references to form items, blocks etc.\n\n\nAlso, the extra data structures provided by STDLIB can help make the code cleaner and less error-prone. Handling and delegation of forms events in PL/SQL code can be significantly simplified for example.\n\n\nBuilding\n\u00b6\n\n\nUse \nCrossForms\n to build PLL library from sources. Dist output path is \nforms/libraries/XX_STDLIB/dist\n.",
             "title": "Home"
+        },
+        {
+            "location": "/index.html#what-is-this",
+            "text": "STDLIB is a PL/SQL library for Oracle Forms 10g engine used by Oracle E-Business Suite R12.   It aims to provide a more standardized, consistent, properly namespaced and more type-safe APIs with some minimal abstraction layers as an alternative to the somewhat chaotic Oracle Forms built-in procedures and functions.   It is designed from the ground up to assist as much as possible in  CrossForms -based projects development.",
+            "title": "What is this?"
+        },
+        {
+            "location": "/index.html#why-to-use-it",
+            "text": "Mainly because it helps to detect most common errors during compilation or early at the Form startup, instead of at the specific program unit runtime. We\u2019re talking especially about typos in string references to form items, blocks etc.  Also, the extra data structures provided by STDLIB can help make the code cleaner and less error-prone. Handling and delegation of forms events in PL/SQL code can be significantly simplified for example.",
+            "title": "Why to use it?"
+        },
+        {
+            "location": "/index.html#building",
+            "text": "Use  CrossForms  to build PLL library from sources. Dist output path is  forms/libraries/XX_STDLIB/dist .",
+            "title": "Building"
         },
         {
             "location": "/installation/index.html",
@@ -27,13 +42,28 @@
         },
         {
             "location": "/usage/project-setup/index.html",
-            "text": "Add dependency to your library\n\n\nWhen using newer versions of CrossForms (preferred):\n\n\n\n\nOpen \ncrossforms-module.json\n file in some ditor\n\n\n\n\nAdd \nXX_STDLIB\n string to \ndependencies.libraries\n array like this:\n\n\n{\n\n    \n\"name\"\n:\n \n\"CUSTOM\"\n,\n\n    \n\"type\"\n:\n \n\"library\"\n,\n\n    \n\"dependencies\"\n:\n \n{\n\n        \n\"libraries\"\n:\n \n[\n\n            \n\"APPCORE\"\n,\n\n            \n\"FNDSQF\"\n,\n\n            \n\"XX_STDLIB\"\n\n        \n]\n\n    \n}\n\n    \n...\n\n\n}\n\n\n\n\n\n\n\n\n\nWhen using legacy version of CrossForms:\n\u00b6\n\n\n\n\nOpen \nMETA-PLL\n file in some editor\n\n\n\n\nAdd \n.attach\n \nLIBRARY\n \nXX_STDLIB\n \nEND\n \nNOCONFIRM\n at the top (below existing \n.attach\n commands):\n\n\n.attach\n \nLIBRARY\n \nAPPCORE\n \nEND\n \nNOCONFIRM\n\n\n.attach\n \nLIBRARY\n \nFNDSQF\n \nEND\n \nNOCONFIRM\n\n\n.attach\n \nLIBRARY\n \nXX_STDLIB\n \nEND\n \nNOCONFIRM\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdd dependency to Form Module \n\n\nAll dependencies of your form library must also be attached to the form module which is using it. Otherwise you will end up with random, unfixable EBS crashes at runtime.\n\n\n\n\nOpen the Form Module file (.fmb) in Oracle Forms Builder\n\n\nIn \nObject Navigator\n window, click on \nAttached Libraries\n node\n\n\nPress green plus sign button on the left toolbar\n\n\n\n\nType in \nXX_STDLIB\n and press \nAttach\n\n\n\n\nNote: \nXX_STDLIB.pll\n must be available in \nFORMS_PATH\n. See \nDevSuite configuration\n for details.\n\n\n\n\n\n\n\n\n\n\nSave the Form Module (and remember to re-deploy it)",
+            "text": "Adding dependency to your library\n\u00b6\n\n\n\n\n\n\n\n\nNewer versions of CrossForms (preferred)\n\u00b6\n\n\n\n\n\n\n\n\nOpen \ncrossforms-module.json\n file in some ditor\n\n\nAdd \nXX_STDLIB\n string to \ndependencies.libraries\n array like this:\n\n\n\n\n{\n\n    \n\"name\"\n:\n \n\"CUSTOM\"\n,\n\n    \n\"type\"\n:\n \n\"library\"\n,\n\n    \n\"dependencies\"\n:\n \n{\n\n        \n\"libraries\"\n:\n \n[\n\n            \n\"APPCORE\"\n,\n\n            \n\"FNDSQF\"\n,\n\n            \n\"XX_STDLIB\"\n\n        \n]\n\n    \n}\n\n    \n...\n\n\n}\n\n\n\n\n\n\n\n\n\nLegacy version of CrossForms\n\u00b6\n\n\n\n\n\n\n\n\nOpen \nMETA-PLL\n file in some editor\n\n\nAdd \n.attach\n \nLIBRARY\n \nXX_STDLIB\n \nEND\n \nNOCONFIRM\n at the top (below existing \n.attach\n commands):\n\n\n\n\n.attach\n \nLIBRARY\n \nAPPCORE\n \nEND\n \nNOCONFIRM\n\n\n.attach\n \nLIBRARY\n \nFNDSQF\n \nEND\n \nNOCONFIRM\n\n\n.attach\n \nLIBRARY\n \nXX_STDLIB\n \nEND\n \nNOCONFIRM\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\nAll dependencies of your form library must also be attached to the form module which is using it. Otherwise you will end up with random, unfixable EBS crashes at runtime.\n\n\n\n\nAdding dependency to Form Module\n\u00b6\n\n\n\n\nOpen the Form Module file (.fmb) in Oracle Forms Builder\n\n\nIn \nObject Navigator\n window, click on \nAttached Libraries\n node\n\n\nPress green plus sign button on the left toolbar\n\n\n\n\nType in \nXX_STDLIB\n and press \nAttach\n\n\n\n\nNote: \nXX_STDLIB.pll\n must be available in \nFORMS_PATH\n. See \nDevSuite configuration\n for details.\n\n\n\n\n\n\n\n\n\n\nSave the Form Module (and remember to re-deploy it)",
             "title": "Project setup"
         },
         {
-            "location": "/usage/project-setup/index.html#when-using-legacy-version-of-crossforms",
-            "text": "Open  META-PLL  file in some editor   Add  .attach   LIBRARY   XX_STDLIB   END   NOCONFIRM  at the top (below existing  .attach  commands):  .attach   LIBRARY   APPCORE   END   NOCONFIRM  .attach   LIBRARY   FNDSQF   END   NOCONFIRM  .attach   LIBRARY   XX_STDLIB   END   NOCONFIRM       Add dependency to Form Module   All dependencies of your form library must also be attached to the form module which is using it. Otherwise you will end up with random, unfixable EBS crashes at runtime.   Open the Form Module file (.fmb) in Oracle Forms Builder  In  Object Navigator  window, click on  Attached Libraries  node  Press green plus sign button on the left toolbar   Type in  XX_STDLIB  and press  Attach   Note:  XX_STDLIB.pll  must be available in  FORMS_PATH . See  DevSuite configuration  for details.      Save the Form Module (and remember to re-deploy it)",
-            "title": "When using legacy version of CrossForms:"
+            "location": "/usage/project-setup/index.html#adding-dependency-to-your-library",
+            "text": "",
+            "title": "Adding dependency to your library"
+        },
+        {
+            "location": "/usage/project-setup/index.html#newer-versions-of-crossforms-preferred",
+            "text": "Open  crossforms-module.json  file in some ditor  Add  XX_STDLIB  string to  dependencies.libraries  array like this:   { \n     \"name\" :   \"CUSTOM\" , \n     \"type\" :   \"library\" , \n     \"dependencies\" :   { \n         \"libraries\" :   [ \n             \"APPCORE\" , \n             \"FNDSQF\" , \n             \"XX_STDLIB\" \n         ] \n     } \n     ...  }",
+            "title": "Newer versions of CrossForms (preferred)"
+        },
+        {
+            "location": "/usage/project-setup/index.html#legacy-version-of-crossforms",
+            "text": "Open  META-PLL  file in some editor  Add  .attach   LIBRARY   XX_STDLIB   END   NOCONFIRM  at the top (below existing  .attach  commands):   .attach   LIBRARY   APPCORE   END   NOCONFIRM  .attach   LIBRARY   FNDSQF   END   NOCONFIRM  .attach   LIBRARY   XX_STDLIB   END   NOCONFIRM      Caution  All dependencies of your form library must also be attached to the form module which is using it. Otherwise you will end up with random, unfixable EBS crashes at runtime.",
+            "title": "Legacy version of CrossForms"
+        },
+        {
+            "location": "/usage/project-setup/index.html#adding-dependency-to-form-module",
+            "text": "Open the Form Module file (.fmb) in Oracle Forms Builder  In  Object Navigator  window, click on  Attached Libraries  node  Press green plus sign button on the left toolbar   Type in  XX_STDLIB  and press  Attach   Note:  XX_STDLIB.pll  must be available in  FORMS_PATH . See  DevSuite configuration  for details.      Save the Form Module (and remember to re-deploy it)",
+            "title": "Adding dependency to Form Module"
         },
         {
             "location": "/usage/event-handling/index.html",

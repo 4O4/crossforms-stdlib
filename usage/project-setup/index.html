@@ -70,7 +70,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#when-using-legacy-version-of-crossforms" tabindex="1" class="md-skip">
+      <a href="#adding-dependency-to-your-library" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -259,8 +259,35 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#when-using-legacy-version-of-crossforms" title="When using legacy version of CrossForms:" class="md-nav__link">
-    When using legacy version of CrossForms:
+  <a href="#adding-dependency-to-your-library" title="Adding dependency to your library" class="md-nav__link">
+    Adding dependency to your library
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newer-versions-of-crossforms-preferred" title="Newer versions of CrossForms (preferred)" class="md-nav__link">
+    Newer versions of CrossForms (preferred)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-version-of-crossforms" title="Legacy version of CrossForms" class="md-nav__link">
+    Legacy version of CrossForms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-dependency-to-form-module" title="Adding dependency to Form Module" class="md-nav__link">
+    Adding dependency to Form Module
   </a>
   
 </li>
@@ -312,8 +339,35 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#when-using-legacy-version-of-crossforms" title="When using legacy version of CrossForms:" class="md-nav__link">
-    When using legacy version of CrossForms:
+  <a href="#adding-dependency-to-your-library" title="Adding dependency to your library" class="md-nav__link">
+    Adding dependency to your library
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newer-versions-of-crossforms-preferred" title="Newer versions of CrossForms (preferred)" class="md-nav__link">
+    Newer versions of CrossForms (preferred)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-version-of-crossforms" title="Legacy version of CrossForms" class="md-nav__link">
+    Legacy version of CrossForms
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-dependency-to-form-module" title="Adding dependency to Form Module" class="md-nav__link">
+    Adding dependency to Form Module
   </a>
   
 </li>
@@ -337,14 +391,17 @@
                 
                   <h1>Project setup</h1>
                 
-                <ol>
-<li>
-<p>Add dependency to your library</p>
-<p><strong>When using newer versions of CrossForms (preferred):</strong></p>
+                <h2 id="adding-dependency-to-your-library">Adding dependency to your library<a class="headerlink" href="#adding-dependency-to-your-library" title="Permanent link">&para;</a></h2>
+<dl>
+<dd></dd>
+</dl>
+<h3 id="newer-versions-of-crossforms-preferred">Newer versions of CrossForms (preferred)<a class="headerlink" href="#newer-versions-of-crossforms-preferred" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
 <ol>
 <li>Open <code class="codehilite">crossforms-module.json</code> file in some ditor</li>
-<li>
-<p>Add <code class="codehilite">XX_STDLIB</code> string to <code class="codehilite">dependencies.libraries</code> array like this:</p>
+<li>Add <code class="codehilite">XX_STDLIB</code> string to <code class="codehilite">dependencies.libraries</code> array like this:</li>
+</ol>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;CUSTOM&quot;</span><span class="p">,</span>
     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;library&quot;</span><span class="p">,</span>
@@ -359,24 +416,27 @@
 <span class="p">}</span>
 </pre></div>
 
-</li>
-</ol>
-<h4 id="when-using-legacy-version-of-crossforms">When using legacy version of CrossForms:<a class="headerlink" href="#when-using-legacy-version-of-crossforms" title="Permanent link">&para;</a></h4>
+</dd>
+</dl>
+<h3 id="legacy-version-of-crossforms">Legacy version of CrossForms<a class="headerlink" href="#legacy-version-of-crossforms" title="Permanent link">&para;</a></h3>
+<dl>
+<dd>
 <ol>
 <li>Open <code class="codehilite">META-PLL</code> file in some editor</li>
-<li>
-<p>Add <code class="codehilite"><span class="na">.attach</span> <span class="no">LIBRARY</span> <span class="no">XX_STDLIB</span> <span class="no">END</span> <span class="no">NOCONFIRM</span></code> at the top (below existing <code class="codehilite"><span class="na">.attach</span></code> commands):</p>
+<li>Add <code class="codehilite"><span class="na">.attach</span> <span class="no">LIBRARY</span> <span class="no">XX_STDLIB</span> <span class="no">END</span> <span class="no">NOCONFIRM</span></code> at the top (below existing <code class="codehilite"><span class="na">.attach</span></code> commands):</li>
+</ol>
 <div class="codehilite"><pre><span></span><span class="na">.attach</span> <span class="no">LIBRARY</span> <span class="no">APPCORE</span> <span class="no">END</span> <span class="no">NOCONFIRM</span>
 <span class="na">.attach</span> <span class="no">LIBRARY</span> <span class="no">FNDSQF</span> <span class="no">END</span> <span class="no">NOCONFIRM</span>
 <span class="na">.attach</span> <span class="no">LIBRARY</span> <span class="no">XX_STDLIB</span> <span class="no">END</span> <span class="no">NOCONFIRM</span>
 </pre></div>
 
-</li>
-</ol>
-</li>
-<li>
-<p>Add dependency to Form Module </p>
+</dd>
+</dl>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>All dependencies of your form library must also be attached to the form module which is using it. Otherwise you will end up with random, unfixable EBS crashes at runtime.</p>
+</div>
+<h2 id="adding-dependency-to-form-module">Adding dependency to Form Module<a class="headerlink" href="#adding-dependency-to-form-module" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open the Form Module file (.fmb) in Oracle Forms Builder</li>
 <li>In <strong>Object Navigator</strong> window, click on <strong>Attached Libraries</strong> node</li>
@@ -390,8 +450,6 @@
 </li>
 <li>
 <p>Save the Form Module (and remember to re-deploy it)</p>
-</li>
-</ol>
 </li>
 </ol>
                 
