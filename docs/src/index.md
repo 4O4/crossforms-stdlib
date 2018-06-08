@@ -1,0 +1,1 @@
+Navigate through the wiki pages using sidebar on the right.

@@ -1,0 +1,39 @@
+site_name: CrossForms STDLIB
+pages:
+    - Home: index.md
+    - Installation: installation.md
+    - DevSuite configuration: devsuite-configuration.md
+    - FAQ: faq.md
+    - Usage:
+        - Project setup: usage/project-setup.md
+        - Event handling: usage/event-handling.md
+
+docs_dir: src
+site_dir: html
+use_directory_urls: false
+theme:
+  name: material
+  feature:
+    tabs: false
+markdown_extensions:
+  - markdown.extensions.attr_list
+  - admonition
+  - codehilite:
+      guess_lang: true
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+  - pymdownx.tilde
