@@ -16,6 +16,7 @@ theme:
   feature:
     tabs: false
 markdown_extensions:
+  - markdown.extensions.def_list
   - markdown.extensions.attr_list
   - admonition
   - codehilite:
